@@ -44,11 +44,12 @@ class Controller:
             return
 
     def handleRaggiungibili(self,e):
-        stato=self._model.getCoutry(int(self._view._ddStato.value))
-        if stato is None:
+
+        if self._view._ddStato.value is None:
             self._view.create_alert("Attenzione: selezionare stato!")
             self._view.update_page()
             return
+        stato = self._model.getCoutry(int(self._view._ddStato.value))
 
         raggiungibili=self._model.statiRaggiungibili(stato)
 
