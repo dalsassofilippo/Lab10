@@ -59,13 +59,13 @@ class Controller:
             return
         self._view._txt_result.clean()
 
-        for c in raggiungibili:
-            self._view._txt_result.controls.append(ft.Text("Nodi raggiungibili correttamente trovati.", color="green"))
-            self._view._txt_result.controls.append(ft.Text(f"Nodo di partenza: {stato.__str__()}; può raggiungere {len(raggiungibili)} stati."))
-            self._view._txt_result.controls.append(ft.Text("Di seguito la lista:"))
-            for s in range(1,len(raggiungibili)):
-                self._view._txt_result.controls.append(ft.Text(
-                    f"{raggiungibili[s].__str__()}"))
+
+        self._view._txt_result.controls.append(ft.Text("Nodi raggiungibili correttamente trovati.", color="green"))
+        self._view._txt_result.controls.append(ft.Text(f"Nodo di partenza: {stato.__str__()}; può raggiungere {len(raggiungibili)} stati."))
+        self._view._txt_result.controls.append(ft.Text("Di seguito la lista:"))
+        for s in range(1,len(raggiungibili)):
+            self._view._txt_result.controls.append(ft.Text(
+                f"{raggiungibili[s].__str__()}"))
 
         self._view.update_page()
 
